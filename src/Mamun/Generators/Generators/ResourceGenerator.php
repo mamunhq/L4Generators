@@ -1,11 +1,11 @@
 <?php
 
-namespace Dollar\Generators\Generators;
+namespace Mamun\Generators\Generators;
 
 use Illuminate\Filesystem\Filesystem as File;
 use Illuminate\Support\Pluralizer;
 
-class ScaffoldGenerator {
+class ResourceGenerator {
 
     /**
      * File system instance

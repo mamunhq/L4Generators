@@ -1,4 +1,4 @@
-<?php namespace Dollar\Generators;
+<?php namespace Mamun\Generators;
 
 use Illuminate\Filesystem\Filesystem as File;
 

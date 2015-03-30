@@ -1,8 +1,8 @@
-<?php namespace Dollar\Generators;
+<?php namespace Mamun\Generators;
 
-use Dollar\Generators\Commands;
-use Dollar\Generators\Generators;
-use Dollar\Generators\Cache;
+use Mamun\Generators\Commands;
+use Mamun\Generators\Generators;
+use Mamun\Generators\Cache;
 use Illuminate\Support\ServiceProvider;
 
 class GeneratorsServiceProvider extends ServiceProvider {

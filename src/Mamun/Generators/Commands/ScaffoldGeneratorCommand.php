@@ -1,7 +1,7 @@
-<?php namespace Dollar\Generators\Commands;
+<?php namespace Mamun\Generators\Commands;
 
-use Dollar\Generators\Generators\ResourceGenerator;
-use Dollar\Generators\Cache;
+use Mamun\Generators\Generators\ResourceGenerator;
+use Mamun\Generators\Cache;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;

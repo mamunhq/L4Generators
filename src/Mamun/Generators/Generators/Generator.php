@@ -1,8 +1,8 @@
 <?php
 
-namespace Dollar\Generators\Generators;
+namespace Mamun\Generators\Generators;
 
-use Dollar\Generators\Cache;
+use Mamun\Generators\Cache;
 use Illuminate\Filesystem\Filesystem as File;
 
 class RequestedCacheNotFound extends \Exception {}

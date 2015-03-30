@@ -1,7 +1,7 @@
 <?php
 
 use Mockery as m;
-use Dollar\Tests\Factory;
+use Mamun\Tests\Factory;
 
 class {{className}} extends TestCase {
 

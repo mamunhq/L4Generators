@@ -1,6 +1,6 @@
 <?php
 
-namespace Dollar\Generators\Generators;
+namespace Mamun\Generators\Generators;
 
 class ModelGenerator extends Generator {
 

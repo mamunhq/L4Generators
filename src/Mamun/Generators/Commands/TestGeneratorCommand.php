@@ -1,6 +1,6 @@
-<?php namespace Dollar\Generators\Commands;
+<?php namespace Mamun\Generators\Commands;
 
-use Dollar\Generators\Generators\TestGenerator;
+use Mamun\Generators\Generators\TestGenerator;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;

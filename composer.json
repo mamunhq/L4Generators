@@ -1,5 +1,5 @@
 {
-    "name": "dollar/generators",
+    "name": "mamun/generators",
     "description": "Laravel 4 Generators w/ Bootstrap 3",
     "keywords": ["laravel", "generators", "artisan", "bootstrap", "scaffold"],
     "authors": [
@@ -9,8 +9,8 @@
             "role": "Developer"
         },
         {
-            "name": "Wes Dollar",
-            "email": "github@wesdollar.com",
+            "name": "Mamun Hoque",
+            "email": "mamun3137@gmail.com",
             "role": "Contributor"
         }
     ],
@@ -26,10 +26,10 @@
     },
     "autoload": {
         "psr-0": {
-            "Dollar\\Generators": "src/"
+            "Mamun\\Generators": "src/"
         },
         "classmap": [
-            "src/Dollar/Generators/Generators"
+            "src/Mamun/Generators/Generators"
         ]
     },
      "extra": {
