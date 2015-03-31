@@ -1,33 +1,55 @@
 @extends('layouts.scaffold')
 
-@section('main')
-
-<div class="row">
-    <div class="col-md-10 col-md-offset-2">
-        <h1>Edit {{Model}}</h1>
-
-        @if ($errors->any())
-        	<div class="alert alert-danger">
-        	    <ul>
-                    {{ implode('', $errors->all('<li class="error">:message</li>')) }}
-                </ul>
-        	</div>
-        @endif
-    </div>
-</div>
-
-{{ Form::model(${{model}}, array('class' => 'form-horizontal', 'method' => 'PATCH', 'route' => array('{{models}}.update', ${{model}}->id))) }}
-
-{{formElements}}
-
-<div class="form-group">
-    <label class="col-sm-2 control-label">&nbsp;</label>
-    <div class="col-sm-10">
-      {{ Form::submit('Update', array('class' => 'btn btn-lg btn-primary')) }}
-      {{ link_to_route('{{models}}.show', 'Cancel', ${{model}}->id, array('class' => 'btn btn-lg btn-default')) }}
-    </div>
-</div>
-
-{{ Form::close() }}
-
+{{-- Page title --}}
+@section('title')
+Edit {{Model}} ::
+@parent
 @stop
+
+@section('main')
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>Edit {{Model}}
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="reload">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                                <a href="{{ route('{{models}}.index') }}" class="btn default"><i class="fa fa-home"></i> Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                {{ Form::model(${{model}}, array('class' => 'form-horizontal form-bordered', 'method' => 'PATCH', 'route' => array('{{models}}.update', ${{model}}->id))) }}
+                    <div class="form-body">
+                            {{formElements}}
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="{{model}}"></label>
+                            <!-- Form Actions -->
+                            <div class="col-sm-6">
+                                <div class="class="form-control" col-sm-6">
+                               {{ link_to_route('{{models}}.show', 'Cancel', ${{model}}->id, array('class' => 'btn btn-link')) }}
+                               {{ Form::submit('Update', array('class' => 'btn btn-lg btn-primary')) }}
+                            </div>
+                        </div>
+                    </div>
+
+                {{ Form::close() }}
+                </div>
+            </div>
+        </div>
+</div>
+@stop
+
+

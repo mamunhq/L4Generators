@@ -87,10 +87,10 @@ class ViewGenerator extends Generator {
         // Now, we'll add the edit and delete buttons.
         $editAndDelete = <<<EOT
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('{$models}.destroy', \${$model}->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                        {{ Form::close() }}
-                        {{ link_to_route('{$models}.edit', 'Edit', array(\${$model}->id), array('class' => 'btn btn-info')) }}
+                         {{ link_to_route('{$models}.edit', 'Edit', array(\${$model}->id), array('class' => 'btn btn-xs btn-warning')) }}
+                         {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('{$models}.destroy', \${$model}->id))) }}
+                            {{ Form::submit('Delete', array('class' => 'btn btn-xs btn-danger delete-row')) }}
+                         {{ Form::close() }}
                     </td>
 EOT;
 
@@ -114,6 +114,7 @@ EOT;
             // TODO: add remaining types
             switch($type)
             {
+
                 case 'integer':
                    $element = "{{ Form::input('number', '$name', Input::old('$name'), array('class'=>'form-control')) }}";
                     break;
@@ -134,13 +135,14 @@ EOT;
             // Now that we have the correct $element,
             // We can build up the HTML fragment
             $frag = <<<EOT
-        <div class="form-group">
-            {{ Form::label('$name', '$formalName:', array('class'=>'col-md-2 control-label')) }}
-            <div class="col-sm-10">
-              $element
+            <!-- $formalName -->
+            <div class="form-group {{ \$errors->has('$name') ? 'error' : '' }}">
+                {{ Form::label('$name', '$formalName:', array('class'=>'col-sm-3 control-label')) }}
+                <div class="col-sm-6">
+                     $element
+                    {{ \$errors->first('$name', '<span class="help-inline">:message</span>') }}
+                </div>
             </div>
-        </div>
-
 EOT;
 
             $formMethods[] = $frag;

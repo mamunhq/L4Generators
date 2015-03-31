@@ -1,23 +1,52 @@
 @extends('layouts.scaffold')
 
+{{-- Page title --}}
+@section('title')
+Show {{Model}} ::
+@parent
+@stop
+
+{{-- Page content --}}
 @section('main')
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box grey-cascade">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-globe"></i> Show {{Model}}
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="reload">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <a href="{{ route('{{models}}.index') }}" class="btn green">
+                                        Return to All {{models}} <i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<h1>Show {{Model}}</h1>
+                    <table class="table table-striped table-bordered table-hover" id="provider_table">
+                        <thead>
+                            <tr>
+                                {{headings}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd gradeX">
+                                {{fields}}
+                            </tr>
+                        </tbody>
+                    </table>
 
-<p>{{ link_to_route('{{models}}.index', 'Return to All {{models}}', null, array('class'=>'btn btn-lg btn-primary')) }}</p>
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			{{headings}}
-		</tr>
-	</thead>
-
-	<tbody>
-		<tr>
-			{{fields}}
-		</tr>
-	</tbody>
-</table>
-
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
